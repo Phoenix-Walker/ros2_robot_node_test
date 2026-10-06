@@ -1,0 +1,3 @@
+pytest>=7.0
+pyyaml>=6.0
+# rclpy 需要ROS2环境，Windows原生无法pip安装
