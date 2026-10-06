@@ -4,6 +4,24 @@ ROS2机器人节点自动化测试项目，基于 pytest + rclpy，模拟机器�
 ## 技术栈
 Python3, ROS2 Humble, rclpy, pytest, PyYAML, Git/GitHub
 
+## 项目目录
+ros2_robot_node_test/
+├── robot_nodes/                   # 被测模拟机器人节点
+│   ├── init.py
+│   ├── lidar_publisher.py        # 模拟激光雷达话题发布节点
+│   └── emergency_service.py      # 机器人急停服务节点
+├── test_cases/                    # pytest测试用例
+│   ├── init.py
+│   ├── test_lidar_topic.py       # 激光雷达话题消息测试
+│   └── test_emergency_service.py # 急停服务接口测试
+├── test_data/                     # YAML测试数据
+│   ├── init.py
+│   └── cases.yaml
+├── utils/
+│   └── log.py                    # 日志工具封装
+├── conftest.py                    # pytest全局fixture，ROS2初始化与销毁
+└── requirements.txt
+
 ## 项目功能
 1. 模拟机器人激光雷达节点，持续发布 `/scan` 话题数据
 2. 模拟机器人急停服务 `/emergency_stop`，支持远程调用触发急停
